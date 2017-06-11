@@ -1,0 +1,123 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title> Welcome </title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script data-require="jquery" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
+    <script src="dashboard_script.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $('.nav li a').click(function (e) {
+
+                $('.nav li').removeClass('active');
+
+                var $parent = $(this).parent();
+                if (!$parent.hasClass('active')) {
+                    $parent.addClass('active');
+                }
+                e.preventDefault();
+            });
+        });
+
+    </script>
+    <nav class="navbar navbar-default">
+
+        <div class="navbar-header">
+            <img src="images/stethoscope.svg" width="50px" height="50px">
+            <a class="navbar-brand" href="#">Dr. NET</a>
+        </div>
+
+        <ul class="nav navbar-nav" id="topbar">
+
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Blog</a></li>
+
+        </ul>
+        <button class="btn btn-info pull-right"> Logout </button>
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2">
+
+                <div class="panel panel-default">
+
+                    <div class="panel-body">
+                        <a href="Dashboard.html">Dashboard</a>
+                    </div>
+
+                    <div class="panel-body">
+                        <a href="#">Social</a>
+                    </div>
+
+                    <div class="panel-body">
+                        <a href="#">Appointments</a>
+                    </div>
+
+                    <div class="panel-body">
+                        <a href="#">Emergency</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-4">
+
+                <div class="todolist not-done">
+                    <h1 style = "color: dimgrey">Todos</h1>
+                    <input type="text" class="form-control add-todo" placeholder="Add todo">
+                    <button id="checkAll" class="btn btn-info">Mark all as done</button>
+
+                    <hr>
+                    <ul id="sortable" class="list-unstyled">
+                        <li class="ui-state-default">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" value="" />Book a movie ticket</label>
+                            </div>
+                        </li>
+                        <li class="ui-state-default">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" value="" />Visit the temple</label>
+                            </div>
+                        </li>
+                        <li class="ui-state-default">
+                            <div class="checkbox">
+                                <label>
+                                <input type="checkbox" value="" />Drop my daughter off to school </label>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="todo-footer">
+                        <strong><span class="count-todos"></span></strong> Items Left
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div id="myScheduler"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+    <body>
+
+</html>
