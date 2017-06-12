@@ -1,30 +1,22 @@
-<!Doctype html>
+<!doctype html>
 <html>
 
 <head>
     <title> Welcome </title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
-    <script data-require="jquery" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
-    <script src="dashboard_script.js"></script>
+    
 </head>
 
 <body>
     <script>
         $(document).ready(function () {
-            $('.nav li a').click(function (e) {
-
-                $('.nav li').removeClass('active');
-
-                var $parent = $(this).parent();
-                if (!$parent.hasClass('active')) {
-                    $parent.addClass('active');
-                }
-                e.preventDefault();
+            $("#dashboard").click(function () {
+                $("#mainContent").load("dashboard.html");
             });
         });
-
     </script>
     <nav class="navbar navbar-default">
 
@@ -53,71 +45,38 @@
                 <div class="panel panel-default">
 
                     <div class="panel-body">
-                        <a href="Dashboard.html">Dashboard</a>
+                        <a  id="dashboard">Dashboard</a>
                     </div>
 
                     <div class="panel-body">
-                        <a href="#">Social</a>
+                        <a href="Social.html">Social</a>
                     </div>
 
                     <div class="panel-body">
-                        <a href="#">Appointments</a>
+                        <a href="Appointments.html">Appointments</a>
                     </div>
 
                     <div class="panel-body">
-                        <a href="#">Emergency</a>
+                        <a href="Emergency.html">Emergency</a>
                     </div>
 
                 </div>
 
             </div>
 
-            <div class="col-lg-4">
 
-                <div class="todolist not-done">
-                    <h1 style = "color: dimgrey">Todos</h1>
-                    <input type="text" class="form-control add-todo" placeholder="Add todo">
-                    <button id="checkAll" class="btn btn-info">Mark all as done</button>
+            <div class="col-lg-10">
 
-                    <hr>
-                    <ul id="sortable" class="list-unstyled">
-                        <li class="ui-state-default">
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox" value="" />Book a movie ticket</label>
-                            </div>
-                        </li>
-                        <li class="ui-state-default">
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox" value="" />Visit the temple</label>
-                            </div>
-                        </li>
-                        <li class="ui-state-default">
-                            <div class="checkbox">
-                                <label>
-                                <input type="checkbox" value="" />Drop my daughter off to school </label>
-                            </div>
-                        </li>
-                    </ul>
-                    <div class="todo-footer">
-                        <strong><span class="count-todos"></span></strong> Items Left
-                    </div>
+                <div id="mainContent">
+
                 </div>
 
             </div>
 
-            <div class="col-lg-6">
-
-                <div id="myScheduler"></div>
-            </div>
 
         </div>
-
     </div>
 
-    </div>
-
-    <body>
+</body>
 
 </html>
